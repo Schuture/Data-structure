@@ -2,7 +2,9 @@
 剑指offer 第11题
 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
-例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。  
+例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。
+
+数组中可以有重复元素  
 '''
 
 def minArray(numbers):
@@ -20,7 +22,7 @@ def minArray(numbers):
             right = mid
         elif numbers[mid] > numbers[right]: # 此时最小值在mid右边
             left = mid + 1
-        elif numbers[mid] == numbers[right]: # 例如[2,3,4,1,1,1,1,1]
+        elif numbers[mid] == numbers[right]: # 例如[2,3,4,1,1,1,1,1]。如果无重复元素，这个分支可舍去
             right -= 1
     
     return numbers[right] # left=right，不可以取numbers[mid]因为最后一次mid来不及更新
