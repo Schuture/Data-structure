@@ -30,7 +30,7 @@ def Josephus2(a, b):                        # 逐个计算的解法
 def Josephus3(a, b):                        # 递归解法
     d = [i for i in range(1, a+1)]
     @functools.lru_cache(999)
-    def f(sum_, interval, n):               # 返回第n个自杀的人的索引
+    def f(sum_, interval, n):               # 共有sum_个人，间隔interval，返回第n个自杀的人的索引
         if n == 1:
             return (sum_ + interval - 1) % sum_
         else:
