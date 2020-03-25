@@ -24,6 +24,7 @@ def merge(A,p,q,r): #包含首尾A[p],A[r]
         else:
             A[k] = R[j]
             j += 1
+            
 def MergeSort(A,p,r):
     if p<r:
         q = int((p+r)//2)
